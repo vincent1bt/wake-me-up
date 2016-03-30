@@ -1,0 +1,551 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BF121B221CAAFAE9007FE7F0 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF121B211CAAFAE9007FE7F0 /* Request.swift */; };
+		BF121B241CAAFC97007FE7F0 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF121B231CAAFC97007FE7F0 /* SwiftyJSON.swift */; };
+		BF121B261CAB008B007FE7F0 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF121B251CAB008B007FE7F0 /* Core.swift */; };
+		BF121B291CAB0137007FE7F0 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF121B281CAB0137007FE7F0 /* News.swift */; };
+		BFD74CEB1CA9D92400CDAEA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD74CEA1CA9D92400CDAEA9 /* AppDelegate.swift */; };
+		BFD74CED1CA9D92400CDAEA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD74CEC1CA9D92400CDAEA9 /* ViewController.swift */; };
+		BFD74CF01CA9D92400CDAEA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD74CEE1CA9D92400CDAEA9 /* Main.storyboard */; };
+		BFD74CF21CA9D92400CDAEA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFD74CF11CA9D92400CDAEA9 /* Assets.xcassets */; };
+		BFD74CF51CA9D92400CDAEA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD74CF31CA9D92400CDAEA9 /* LaunchScreen.storyboard */; };
+		BFD74D001CA9D92400CDAEA9 /* wakeMeUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD74CFF1CA9D92400CDAEA9 /* wakeMeUpTests.swift */; };
+		BFD74D0B1CA9D92400CDAEA9 /* wakeMeUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD74D0A1CA9D92400CDAEA9 /* wakeMeUpUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BFD74CFC1CA9D92400CDAEA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFD74CDF1CA9D92300CDAEA9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BFD74CE61CA9D92300CDAEA9;
+			remoteInfo = wakeMeUp;
+		};
+		BFD74D071CA9D92400CDAEA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFD74CDF1CA9D92300CDAEA9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BFD74CE61CA9D92300CDAEA9;
+			remoteInfo = wakeMeUp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BF121B211CAAFAE9007FE7F0 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		BF121B231CAAFC97007FE7F0 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		BF121B251CAB008B007FE7F0 /* Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
+		BF121B281CAB0137007FE7F0 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		BFD74CE71CA9D92300CDAEA9 /* wakeMeUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wakeMeUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFD74CEA1CA9D92400CDAEA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BFD74CEC1CA9D92400CDAEA9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BFD74CEF1CA9D92400CDAEA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BFD74CF11CA9D92400CDAEA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BFD74CF41CA9D92400CDAEA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BFD74CF61CA9D92400CDAEA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFD74CFB1CA9D92400CDAEA9 /* wakeMeUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wakeMeUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFD74CFF1CA9D92400CDAEA9 /* wakeMeUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wakeMeUpTests.swift; sourceTree = "<group>"; };
+		BFD74D011CA9D92400CDAEA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFD74D061CA9D92400CDAEA9 /* wakeMeUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wakeMeUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFD74D0A1CA9D92400CDAEA9 /* wakeMeUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wakeMeUpUITests.swift; sourceTree = "<group>"; };
+		BFD74D0C1CA9D92400CDAEA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BFD74CE41CA9D92300CDAEA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFD74CF81CA9D92400CDAEA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFD74D031CA9D92400CDAEA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BF121B201CAAFAC0007FE7F0 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				BF121B211CAAFAE9007FE7F0 /* Request.swift */,
+				BF121B251CAB008B007FE7F0 /* Core.swift */,
+			);
+			name = Api;
+			sourceTree = "<group>";
+		};
+		BF121B271CAB012C007FE7F0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BF121B281CAB0137007FE7F0 /* News.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		BFD74CDE1CA9D92300CDAEA9 = {
+			isa = PBXGroup;
+			children = (
+				BFD74CE91CA9D92300CDAEA9 /* wakeMeUp */,
+				BFD74CFE1CA9D92400CDAEA9 /* wakeMeUpTests */,
+				BFD74D091CA9D92400CDAEA9 /* wakeMeUpUITests */,
+				BFD74CE81CA9D92300CDAEA9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BFD74CE81CA9D92300CDAEA9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BFD74CE71CA9D92300CDAEA9 /* wakeMeUp.app */,
+				BFD74CFB1CA9D92400CDAEA9 /* wakeMeUpTests.xctest */,
+				BFD74D061CA9D92400CDAEA9 /* wakeMeUpUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BFD74CE91CA9D92300CDAEA9 /* wakeMeUp */ = {
+			isa = PBXGroup;
+			children = (
+				BF121B271CAB012C007FE7F0 /* Data */,
+				BF121B201CAAFAC0007FE7F0 /* Api */,
+				BFD74D181CA9D93100CDAEA9 /* DefaultFiles */,
+				BFD74CEC1CA9D92400CDAEA9 /* ViewController.swift */,
+			);
+			path = wakeMeUp;
+			sourceTree = "<group>";
+		};
+		BFD74CFE1CA9D92400CDAEA9 /* wakeMeUpTests */ = {
+			isa = PBXGroup;
+			children = (
+				BFD74CFF1CA9D92400CDAEA9 /* wakeMeUpTests.swift */,
+				BFD74D011CA9D92400CDAEA9 /* Info.plist */,
+			);
+			path = wakeMeUpTests;
+			sourceTree = "<group>";
+		};
+		BFD74D091CA9D92400CDAEA9 /* wakeMeUpUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BFD74D0A1CA9D92400CDAEA9 /* wakeMeUpUITests.swift */,
+				BFD74D0C1CA9D92400CDAEA9 /* Info.plist */,
+			);
+			path = wakeMeUpUITests;
+			sourceTree = "<group>";
+		};
+		BFD74D181CA9D93100CDAEA9 /* DefaultFiles */ = {
+			isa = PBXGroup;
+			children = (
+				BF121B231CAAFC97007FE7F0 /* SwiftyJSON.swift */,
+				BFD74CEE1CA9D92400CDAEA9 /* Main.storyboard */,
+				BFD74CF61CA9D92400CDAEA9 /* Info.plist */,
+				BFD74CF11CA9D92400CDAEA9 /* Assets.xcassets */,
+				BFD74CF31CA9D92400CDAEA9 /* LaunchScreen.storyboard */,
+				BFD74CEA1CA9D92400CDAEA9 /* AppDelegate.swift */,
+			);
+			name = DefaultFiles;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BFD74CE61CA9D92300CDAEA9 /* wakeMeUp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFD74D0F1CA9D92400CDAEA9 /* Build configuration list for PBXNativeTarget "wakeMeUp" */;
+			buildPhases = (
+				BFD74CE31CA9D92300CDAEA9 /* Sources */,
+				BFD74CE41CA9D92300CDAEA9 /* Frameworks */,
+				BFD74CE51CA9D92300CDAEA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = wakeMeUp;
+			productName = wakeMeUp;
+			productReference = BFD74CE71CA9D92300CDAEA9 /* wakeMeUp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BFD74CFA1CA9D92400CDAEA9 /* wakeMeUpTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFD74D121CA9D92400CDAEA9 /* Build configuration list for PBXNativeTarget "wakeMeUpTests" */;
+			buildPhases = (
+				BFD74CF71CA9D92400CDAEA9 /* Sources */,
+				BFD74CF81CA9D92400CDAEA9 /* Frameworks */,
+				BFD74CF91CA9D92400CDAEA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BFD74CFD1CA9D92400CDAEA9 /* PBXTargetDependency */,
+			);
+			name = wakeMeUpTests;
+			productName = wakeMeUpTests;
+			productReference = BFD74CFB1CA9D92400CDAEA9 /* wakeMeUpTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BFD74D051CA9D92400CDAEA9 /* wakeMeUpUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFD74D151CA9D92400CDAEA9 /* Build configuration list for PBXNativeTarget "wakeMeUpUITests" */;
+			buildPhases = (
+				BFD74D021CA9D92400CDAEA9 /* Sources */,
+				BFD74D031CA9D92400CDAEA9 /* Frameworks */,
+				BFD74D041CA9D92400CDAEA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BFD74D081CA9D92400CDAEA9 /* PBXTargetDependency */,
+			);
+			name = wakeMeUpUITests;
+			productName = wakeMeUpUITests;
+			productReference = BFD74D061CA9D92400CDAEA9 /* wakeMeUpUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFD74CDF1CA9D92300CDAEA9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "vicente rodriguez";
+				TargetAttributes = {
+					BFD74CE61CA9D92300CDAEA9 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = BJRVSDXBD2;
+					};
+					BFD74CFA1CA9D92400CDAEA9 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = BJRVSDXBD2;
+						TestTargetID = BFD74CE61CA9D92300CDAEA9;
+					};
+					BFD74D051CA9D92400CDAEA9 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = BJRVSDXBD2;
+						TestTargetID = BFD74CE61CA9D92300CDAEA9;
+					};
+				};
+			};
+			buildConfigurationList = BFD74CE21CA9D92300CDAEA9 /* Build configuration list for PBXProject "wakeMeUp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BFD74CDE1CA9D92300CDAEA9;
+			productRefGroup = BFD74CE81CA9D92300CDAEA9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BFD74CE61CA9D92300CDAEA9 /* wakeMeUp */,
+				BFD74CFA1CA9D92400CDAEA9 /* wakeMeUpTests */,
+				BFD74D051CA9D92400CDAEA9 /* wakeMeUpUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BFD74CE51CA9D92300CDAEA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFD74CF51CA9D92400CDAEA9 /* LaunchScreen.storyboard in Resources */,
+				BFD74CF21CA9D92400CDAEA9 /* Assets.xcassets in Resources */,
+				BFD74CF01CA9D92400CDAEA9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFD74CF91CA9D92400CDAEA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFD74D041CA9D92400CDAEA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BFD74CE31CA9D92300CDAEA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF121B291CAB0137007FE7F0 /* News.swift in Sources */,
+				BFD74CED1CA9D92400CDAEA9 /* ViewController.swift in Sources */,
+				BF121B221CAAFAE9007FE7F0 /* Request.swift in Sources */,
+				BFD74CEB1CA9D92400CDAEA9 /* AppDelegate.swift in Sources */,
+				BF121B261CAB008B007FE7F0 /* Core.swift in Sources */,
+				BF121B241CAAFC97007FE7F0 /* SwiftyJSON.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFD74CF71CA9D92400CDAEA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFD74D001CA9D92400CDAEA9 /* wakeMeUpTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFD74D021CA9D92400CDAEA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFD74D0B1CA9D92400CDAEA9 /* wakeMeUpUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BFD74CFD1CA9D92400CDAEA9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BFD74CE61CA9D92300CDAEA9 /* wakeMeUp */;
+			targetProxy = BFD74CFC1CA9D92400CDAEA9 /* PBXContainerItemProxy */;
+		};
+		BFD74D081CA9D92400CDAEA9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BFD74CE61CA9D92300CDAEA9 /* wakeMeUp */;
+			targetProxy = BFD74D071CA9D92400CDAEA9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BFD74CEE1CA9D92400CDAEA9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BFD74CEF1CA9D92400CDAEA9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BFD74CF31CA9D92400CDAEA9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BFD74CF41CA9D92400CDAEA9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BFD74D0D1CA9D92400CDAEA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BFD74D0E1CA9D92400CDAEA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BFD74D101CA9D92400CDAEA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = wakeMeUp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vicenterodriguez.wakeMeUp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BFD74D111CA9D92400CDAEA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = wakeMeUp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vicenterodriguez.wakeMeUp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BFD74D131CA9D92400CDAEA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = wakeMeUpTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vicenterodriguez.wakeMeUpTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wakeMeUp.app/wakeMeUp";
+			};
+			name = Debug;
+		};
+		BFD74D141CA9D92400CDAEA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = wakeMeUpTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vicenterodriguez.wakeMeUpTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wakeMeUp.app/wakeMeUp";
+			};
+			name = Release;
+		};
+		BFD74D161CA9D92400CDAEA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = wakeMeUpUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vicenterodriguez.wakeMeUpUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = wakeMeUp;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		BFD74D171CA9D92400CDAEA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = wakeMeUpUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vicenterodriguez.wakeMeUpUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = wakeMeUp;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BFD74CE21CA9D92300CDAEA9 /* Build configuration list for PBXProject "wakeMeUp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFD74D0D1CA9D92400CDAEA9 /* Debug */,
+				BFD74D0E1CA9D92400CDAEA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFD74D0F1CA9D92400CDAEA9 /* Build configuration list for PBXNativeTarget "wakeMeUp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFD74D101CA9D92400CDAEA9 /* Debug */,
+				BFD74D111CA9D92400CDAEA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFD74D121CA9D92400CDAEA9 /* Build configuration list for PBXNativeTarget "wakeMeUpTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFD74D131CA9D92400CDAEA9 /* Debug */,
+				BFD74D141CA9D92400CDAEA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFD74D151CA9D92400CDAEA9 /* Build configuration list for PBXNativeTarget "wakeMeUpUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFD74D161CA9D92400CDAEA9 /* Debug */,
+				BFD74D171CA9D92400CDAEA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFD74CDF1CA9D92300CDAEA9 /* Project object */;
+}
