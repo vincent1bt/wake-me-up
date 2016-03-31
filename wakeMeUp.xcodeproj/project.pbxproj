@@ -11,6 +11,11 @@
 		BF121B241CAAFC97007FE7F0 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF121B231CAAFC97007FE7F0 /* SwiftyJSON.swift */; };
 		BF121B261CAB008B007FE7F0 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF121B251CAB008B007FE7F0 /* Core.swift */; };
 		BF121B291CAB0137007FE7F0 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF121B281CAB0137007FE7F0 /* News.swift */; };
+		BF121B2F1CAB5DE0007FE7F0 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF121B2B1CAB5DE0007FE7F0 /* Fabric.framework */; };
+		BF121B301CAB5DE0007FE7F0 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF121B2C1CAB5DE0007FE7F0 /* TwitterKit.framework */; };
+		BF121B311CAB5DE0007FE7F0 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF121B2D1CAB5DE0007FE7F0 /* TwitterKitResources.bundle */; };
+		BF121B321CAB5DE0007FE7F0 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF121B2E1CAB5DE0007FE7F0 /* TwitterCore.framework */; };
+		BFC49B551CAC8B4D00103571 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC49B541CAC8B4D00103571 /* ConfigurationViewController.swift */; };
 		BFD74CEB1CA9D92400CDAEA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD74CEA1CA9D92400CDAEA9 /* AppDelegate.swift */; };
 		BFD74CED1CA9D92400CDAEA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD74CEC1CA9D92400CDAEA9 /* ViewController.swift */; };
 		BFD74CF01CA9D92400CDAEA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD74CEE1CA9D92400CDAEA9 /* Main.storyboard */; };
@@ -18,6 +23,8 @@
 		BFD74CF51CA9D92400CDAEA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD74CF31CA9D92400CDAEA9 /* LaunchScreen.storyboard */; };
 		BFD74D001CA9D92400CDAEA9 /* wakeMeUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD74CFF1CA9D92400CDAEA9 /* wakeMeUpTests.swift */; };
 		BFD74D0B1CA9D92400CDAEA9 /* wakeMeUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD74D0A1CA9D92400CDAEA9 /* wakeMeUpUITests.swift */; };
+		BFFF45EB1CADA04C00BE5FE8 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = BFFF45EA1CADA04C00BE5FE8 /* .gitignore */; };
+		BFFF45ED1CADA08000BE5FE8 /* TwitterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFF45EC1CADA08000BE5FE8 /* TwitterData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +49,11 @@
 		BF121B231CAAFC97007FE7F0 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		BF121B251CAB008B007FE7F0 /* Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		BF121B281CAB0137007FE7F0 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		BF121B2B1CAB5DE0007FE7F0 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		BF121B2C1CAB5DE0007FE7F0 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		BF121B2D1CAB5DE0007FE7F0 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
+		BF121B2E1CAB5DE0007FE7F0 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
+		BFC49B541CAC8B4D00103571 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		BFD74CE71CA9D92300CDAEA9 /* wakeMeUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wakeMeUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD74CEA1CA9D92400CDAEA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFD74CEC1CA9D92400CDAEA9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +67,8 @@
 		BFD74D061CA9D92400CDAEA9 /* wakeMeUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wakeMeUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD74D0A1CA9D92400CDAEA9 /* wakeMeUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wakeMeUpUITests.swift; sourceTree = "<group>"; };
 		BFD74D0C1CA9D92400CDAEA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFFF45EA1CADA04C00BE5FE8 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		BFFF45EC1CADA08000BE5FE8 /* TwitterData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +76,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF121B2F1CAB5DE0007FE7F0 /* Fabric.framework in Frameworks */,
+				BF121B321CAB5DE0007FE7F0 /* TwitterCore.framework in Frameworks */,
+				BF121B301CAB5DE0007FE7F0 /* TwitterKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,9 +116,23 @@
 			name = Data;
 			sourceTree = "<group>";
 		};
+		BFC49B531CAC8B1600103571 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BFD74CEC1CA9D92400CDAEA9 /* ViewController.swift */,
+				BFC49B541CAC8B4D00103571 /* ConfigurationViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		BFD74CDE1CA9D92300CDAEA9 = {
 			isa = PBXGroup;
 			children = (
+				BFFF45EA1CADA04C00BE5FE8 /* .gitignore */,
+				BF121B2B1CAB5DE0007FE7F0 /* Fabric.framework */,
+				BF121B2C1CAB5DE0007FE7F0 /* TwitterKit.framework */,
+				BF121B2D1CAB5DE0007FE7F0 /* TwitterKitResources.bundle */,
+				BF121B2E1CAB5DE0007FE7F0 /* TwitterCore.framework */,
 				BFD74CE91CA9D92300CDAEA9 /* wakeMeUp */,
 				BFD74CFE1CA9D92400CDAEA9 /* wakeMeUpTests */,
 				BFD74D091CA9D92400CDAEA9 /* wakeMeUpUITests */,
@@ -122,10 +153,10 @@
 		BFD74CE91CA9D92300CDAEA9 /* wakeMeUp */ = {
 			isa = PBXGroup;
 			children = (
+				BFC49B531CAC8B1600103571 /* Controllers */,
 				BF121B271CAB012C007FE7F0 /* Data */,
 				BF121B201CAAFAC0007FE7F0 /* Api */,
 				BFD74D181CA9D93100CDAEA9 /* DefaultFiles */,
-				BFD74CEC1CA9D92400CDAEA9 /* ViewController.swift */,
 			);
 			path = wakeMeUp;
 			sourceTree = "<group>";
@@ -157,6 +188,7 @@
 				BFD74CF11CA9D92400CDAEA9 /* Assets.xcassets */,
 				BFD74CF31CA9D92400CDAEA9 /* LaunchScreen.storyboard */,
 				BFD74CEA1CA9D92400CDAEA9 /* AppDelegate.swift */,
+				BFFF45EC1CADA08000BE5FE8 /* TwitterData.swift */,
 			);
 			name = DefaultFiles;
 			sourceTree = "<group>";
@@ -171,6 +203,7 @@
 				BFD74CE31CA9D92300CDAEA9 /* Sources */,
 				BFD74CE41CA9D92300CDAEA9 /* Frameworks */,
 				BFD74CE51CA9D92300CDAEA9 /* Resources */,
+				BF121B2A1CAB5AAB007FE7F0 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -268,6 +301,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFFF45EB1CADA04C00BE5FE8 /* .gitignore in Resources */,
+				BF121B311CAB5DE0007FE7F0 /* TwitterKitResources.bundle in Resources */,
 				BFD74CF51CA9D92400CDAEA9 /* LaunchScreen.storyboard in Resources */,
 				BFD74CF21CA9D92400CDAEA9 /* Assets.xcassets in Resources */,
 				BFD74CF01CA9D92400CDAEA9 /* Main.storyboard in Resources */,
@@ -290,15 +325,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BF121B2A1CAB5AAB007FE7F0 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run c75f94c7e0f3562255b51bf62c1ab16e3efa0a9d 643cb43037a95c456294bd0a92ab9a6d512da2222c40322ab1e2cb5e9c4009c1";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BFD74CE31CA9D92300CDAEA9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BF121B291CAB0137007FE7F0 /* News.swift in Sources */,
+				BFFF45ED1CADA08000BE5FE8 /* TwitterData.swift in Sources */,
 				BFD74CED1CA9D92400CDAEA9 /* ViewController.swift in Sources */,
 				BF121B221CAAFAE9007FE7F0 /* Request.swift in Sources */,
 				BFD74CEB1CA9D92400CDAEA9 /* AppDelegate.swift in Sources */,
+				BFC49B551CAC8B4D00103571 /* ConfigurationViewController.swift in Sources */,
 				BF121B261CAB008B007FE7F0 /* Core.swift in Sources */,
 				BF121B241CAAFC97007FE7F0 /* SwiftyJSON.swift in Sources */,
 			);
@@ -440,6 +494,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = wakeMeUp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vicenterodriguez.wakeMeUp;
@@ -451,6 +509,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = wakeMeUp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vicenterodriguez.wakeMeUp;

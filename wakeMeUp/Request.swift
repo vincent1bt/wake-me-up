@@ -5,8 +5,9 @@
 //  Created by vicente rodriguez on 3/29/16.
 //  Copyright © 2016 vicente rodriguez. All rights reserved.
 //
-
 import Foundation
+import TwitterKit
+
 typealias JSONResponse = (JSON, NSError?) -> Void
 
 struct Request {
@@ -21,6 +22,14 @@ struct Request {
         }
     }
     
+    func getTweets(onCompletion: JSONResponse) {
+        makeTwitterRequest() {
+            (json, error) in
+            onCompletion(json, nil)
+        }
+    }
+    
+    
     private func makeHTTPRequest(url: String, onCompletion: JSONResponse) {
         let endPoint = "http://api.nytimes.com/svc/\(url)"
         let request = NSMutableURLRequest(URL: NSURL(string: endPoint)!)
@@ -31,5 +40,29 @@ struct Request {
             onCompletion(json, error)
         }
         task.resume()
+    }
+    
+    private func makeTwitterRequest(onCompletion: JSONResponse) {
+        let userID = Twitter.sharedInstance().sessionStore.session()?.userID
+        let client = TWTRAPIClient(userID: userID)
+        let endPoint = "https://api.twitter.com/1.1/statuses/home_timeline.json"
+        let params = ["count": "10", "trim_user":"false"]
+        var clientError: NSError?
+        
+        let request = client.URLRequestWithMethod("GET", URL: endPoint, parameters: params, error: &clientError)
+        
+        guard clientError == nil else {
+            return
+        }
+        
+        client.sendTwitterRequest(request) {
+            (response, data, connectionError) -> Void in
+            
+            if connectionError == nil {
+                let json: JSON = JSON(data: data!)
+                onCompletion(json, nil)
+            }
+        }
+        
     }
 }

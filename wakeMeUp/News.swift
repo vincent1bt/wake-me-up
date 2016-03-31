@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import TwitterKit
 
 struct News {
     static var sharedInstance = News()
     var news: Array<JSON> = [JSON]()
+    var tweets = [TWTRTweet]()
     
     func getDataFromNewsById(id: Int) -> [String: String] {
         if news == [] || !(news.indices).contains(id) {
