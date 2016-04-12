@@ -9,6 +9,10 @@
 import Foundation
 import MapKit
 
+struct FoodAnnotations {
+    static var annotations = [FoodAnnotation]()
+}
+
 class FoodAnnotation: NSObject, MKAnnotation {
     let title: String?
     let subtitle: String?

@@ -17,7 +17,10 @@
 		BF121B321CAB5DE0007FE7F0 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF121B2E1CAB5DE0007FE7F0 /* TwitterCore.framework */; };
 		BFA812FF1CADB7FD00B91B03 /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA812FE1CADB7FD00B91B03 /* Places.swift */; };
 		BFA813011CADC4F600B91B03 /* FoodAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA813001CADC4F600B91B03 /* FoodAnnotation.swift */; };
+		BFB8EA4F1CBAFBD800986320 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8EA4E1CBAFBD800986320 /* WeatherTableViewCell.swift */; };
+		BFB8EA511CBB43F700986320 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8EA501CBB43F700986320 /* Weather.swift */; };
 		BFBCBA9E1CB83B0100DA1C01 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBCBA9D1CB83B0100DA1C01 /* Keys.swift */; };
+		BFC48A471CBC23D70001079D /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC48A461CBC23D70001079D /* NewsTableViewCell.swift */; };
 		BFC49B551CAC8B4D00103571 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC49B541CAC8B4D00103571 /* ConfigurationViewController.swift */; };
 		BFD74CEB1CA9D92400CDAEA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD74CEA1CA9D92400CDAEA9 /* AppDelegate.swift */; };
 		BFD74CED1CA9D92400CDAEA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD74CEC1CA9D92400CDAEA9 /* ViewController.swift */; };
@@ -60,7 +63,10 @@
 		BF121B2E1CAB5DE0007FE7F0 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 		BFA812FE1CADB7FD00B91B03 /* Places.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
 		BFA813001CADC4F600B91B03 /* FoodAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodAnnotation.swift; sourceTree = "<group>"; };
+		BFB8EA4E1CBAFBD800986320 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
+		BFB8EA501CBB43F700986320 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		BFBCBA9D1CB83B0100DA1C01 /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		BFC48A461CBC23D70001079D /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		BFC49B541CAC8B4D00103571 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		BFD74CE71CA9D92300CDAEA9 /* wakeMeUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wakeMeUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD74CEA1CA9D92400CDAEA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -142,8 +148,18 @@
 				BF121B281CAB0137007FE7F0 /* News.swift */,
 				BFA812FE1CADB7FD00B91B03 /* Places.swift */,
 				BFA813001CADC4F600B91B03 /* FoodAnnotation.swift */,
+				BFB8EA501CBB43F700986320 /* Weather.swift */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		BFB8EA4D1CBAFBA000986320 /* CustomFiles */ = {
+			isa = PBXGroup;
+			children = (
+				BFB8EA4E1CBAFBD800986320 /* WeatherTableViewCell.swift */,
+				BFC48A461CBC23D70001079D /* NewsTableViewCell.swift */,
+			);
+			name = CustomFiles;
 			sourceTree = "<group>";
 		};
 		BFC49B531CAC8B1600103571 /* Controllers */ = {
@@ -186,6 +202,7 @@
 		BFD74CE91CA9D92300CDAEA9 /* wakeMeUp */ = {
 			isa = PBXGroup;
 			children = (
+				BFB8EA4D1CBAFBA000986320 /* CustomFiles */,
 				BFC49B531CAC8B1600103571 /* Controllers */,
 				BF121B271CAB012C007FE7F0 /* Data */,
 				BF121B201CAAFAC0007FE7F0 /* Api */,
@@ -431,7 +448,10 @@
 			files = (
 				BF121B291CAB0137007FE7F0 /* News.swift in Sources */,
 				BFA813011CADC4F600B91B03 /* FoodAnnotation.swift in Sources */,
+				BFB8EA4F1CBAFBD800986320 /* WeatherTableViewCell.swift in Sources */,
 				BFD74CED1CA9D92400CDAEA9 /* ViewController.swift in Sources */,
+				BFC48A471CBC23D70001079D /* NewsTableViewCell.swift in Sources */,
+				BFB8EA511CBB43F700986320 /* Weather.swift in Sources */,
 				BF121B221CAAFAE9007FE7F0 /* Request.swift in Sources */,
 				BFD74CEB1CA9D92400CDAEA9 /* AppDelegate.swift in Sources */,
 				BFC49B551CAC8B4D00103571 /* ConfigurationViewController.swift in Sources */,

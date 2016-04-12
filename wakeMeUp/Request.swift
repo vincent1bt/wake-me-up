@@ -18,6 +18,7 @@ struct Request {
     
     static let sharedInstance = Request()
     private let keyMostPopular = "df44537e748f15225473138a13a01619:14:74524472"
+    private let weatherKey = "5ad09f42d5b07b43301d02ac54ef499f"
     
     init() {
         let client = Client(clientID: Keys.Foursquare.clientId , clientSecret: Keys.Foursquare.clientSecret , redirectURL: "")
@@ -26,10 +27,20 @@ struct Request {
         self.session = Session.sharedSession()
     }
     
+    
+    //openweather api
+    func getWeather(lat: CLLocationDegrees, lon: CLLocationDegrees, onCompletion: JSONResponse) {
+        let endPoint = "http://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&APPID=\(weatherKey)&units=metric&lang=es"
+        makeHTTPRequest(endPoint) { (json, error) in
+            onCompletion(json, error)
+        }
+    }
+    
     //new york times api
     func getNews(onCompletion: JSONResponse) {
         let urlString = "mostpopular/v2/mostviewed/all-sections/1?api-key=\(keyMostPopular)"
-        makeHTTPRequest(urlString) { (json, error) in
+        let endPoint = "http://api.nytimes.com/svc/" + urlString
+        makeHTTPRequest(endPoint) { (json, error) in
             onCompletion(json, error)
         }
     }
@@ -56,8 +67,7 @@ struct Request {
     
     
     private func makeHTTPRequest(url: String, onCompletion: JSONResponse) {
-        let endPoint = "http://api.nytimes.com/svc/\(url)"
-        let request = NSMutableURLRequest(URL: NSURL(string: endPoint)!)
+        let request = NSMutableURLRequest(URL: NSURL(string: url)!)
         let session = NSURLSession.sharedSession()
         
         let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
