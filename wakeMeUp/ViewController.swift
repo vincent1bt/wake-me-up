@@ -12,14 +12,17 @@ import MapKit
 import CoreLocation
 import UIKit
 import TwitterKit
+import RealmSwift
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate,CLLocationManagerDelegate, TWTRTweetViewDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate,CLLocationManagerDelegate, TWTRTweetViewDelegate, RemindersTableViewCellDelegate {
     
-    
+    @IBOutlet weak var tableViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
-
+    
+    var reminders: Results<Reminder>!
     var showMap = false
+    var rowPath: Int?
     var typeOfInfo = TypeOfTable.Reminders
     var map: MKMapView!
     var locationManager: CLLocationManager!
@@ -27,12 +30,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var configMapView: UIView!
     var viewHeight: CGFloat = 365
     var mapExpanded: Bool = false
-    
-    let recordatorios = ["comida", "pasear", "perro", "comida", "pasear", "perro", "comida", "pasear", "perro", "escuchar"]
-    let masrecordatorios = ["comida", "pasear", "perro", "comida", "pasear", "perro", "comida", "pasear", "perro", "escuchar"]
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Recordatorios"
+        self.reminders = Reminders.reminders
         configureTableView()
         getSize()
         configureMap()
@@ -261,6 +263,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch typeOfInfo {
+        case .Reminders:
+            if section == 0 {
+                return 1
+            } else {
+                return reminders.count + 1
+            }
+        case .News:
+            if section == 0 {
+                return News.newsItems.count
+            } else {
+                return News.tweets.count
+            }
+        case .Places:
+            return Places.places.count
+        }
+    }
+    
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 60.0
     }
@@ -280,7 +301,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel(frame: CGRectMake(10, 15, tableView.frame.size.width, 30))
         label.font = UIFont.systemFontOfSize(18)
-        //label.textColor = UIColor.whiteColor()
         label.textColor = UIColor(red: 44/255, green: 62/255, blue: 80/255, alpha: 0.98)
         
         switch typeOfInfo {
@@ -301,28 +321,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         let view = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 60))
         view.addSubview(label)
-        //view.backgroundColor = UIColor(red: 44/255, green: 62/255, blue: 80/255, alpha: 0.98)
         view.backgroundColor = UIColor.init(red: 236/255, green: 240/255, blue: 241/255, alpha: 0.98)
         return view
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch typeOfInfo {
-        case .Reminders:
-            if section == 0 {
-                return 1
-            } else {
-                return 10
-            }
-        case .News:
-            if section == 0 {
-                return News.newsItems.count
-            } else {
-                return News.tweets.count
-            }
-        case .Places:
-            return Places.places.count
-        }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -331,6 +331,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let region = MKCoordinateRegionMakeWithDistance(place.coordinate, distanceSpan, distanceSpan)
             map.setRegion(region, animated: true)
             map.selectAnnotation(FoodAnnotations.annotations[indexPath.row], animated: true)
+        }
+    }
+    
+    func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
+        if typeOfInfo == .Reminders && indexPath.section == 1 {
+            if reminders[indexPath.row].editing {
+                self.rowPath = indexPath.row
+                performSegueWithIdentifier("reminderSegue", sender: self)
+            }
         }
     }
     
@@ -346,10 +355,33 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 }
                 cell.thirdLabel.text = Weather.date
                 return cell
+                
             } else {
-                let cell = tableView.dequeueReusableCellWithIdentifier("remindersCell", forIndexPath: indexPath)
-//                cell.textLabel?.text = recordatorios[indexPath.row]
-//                cell.detailTextLabel?.text = masrecordatorios[indexPath.row]
+                let cell = tableView.dequeueReusableCellWithIdentifier("remindersCell", forIndexPath: indexPath) as! RemindersTableViewCell
+                cell.textField.tag = indexPath.row
+                cell.delegate = self
+                cell.id = indexPath.row
+                cell.maxId = reminders.count
+                
+                if indexPath.row == reminders.count {
+                    cell.accessoryType = .None
+                    cell.textField.text = ""
+                    cell.dateLabel.text = ""
+                } else {
+                    cell.textField.text = reminders[indexPath.row].title
+                    if let date = reminders[indexPath.row].stringDate {
+                        cell.dateLabel.text = date
+                    } else {
+                        cell.dateLabel.text = ""
+                    }
+                    cell.accessoryType = .DetailButton
+                }
+                
+//                if indexPath.row > 0 {
+//
+//                } else if indexPath.row == 0 {
+//
+//                }
                 return cell
             }
         case .News:
@@ -381,15 +413,63 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    @IBAction func endEditingReminder(sender: UITextField) {
+        if sender.text != nil && sender.text != "" {
+            if sender.tag != reminders.count {
+                if reminders[sender.tag].editing {
+                    print("editando")
+                    self.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 1), atScrollPosition: .Bottom, animated: false)
+                }
+            } else {
+                createReminder(sender.text!)
+                self.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: self.reminders.count - 1, inSection: 1), atScrollPosition: .Bottom, animated: false)
+            }
+        }
+        
+        UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseOut, animations: {
+            self.view.frame.origin.y = 0
+        }, completion: nil)
+    }
+    
+    func createReminder(text: String) {
+        Data.sharedInstance.saveReminder(text)
+        self.tableView.reloadSections(NSIndexSet(index: 1), withRowAnimation: .Fade)
+    }
+    
+    func updateReminder() {
+        Data.sharedInstance.updateReminder()
+    }
+    
+    func reminderDeleted(id: Int) {
+        let reminder = reminders[id]
+        Data.sharedInstance.deleteReminder(reminder)
+        
+        self.tableView.beginUpdates()
+        self.tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: id, inSection: 1)], withRowAnimation: .Fade)
+        self.tableView.reloadSections(NSIndexSet(index: 1), withRowAnimation: .Fade)
+        self.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: id + 1, inSection: 1), atScrollPosition: .Bottom, animated: false)
+        self.tableView.endUpdates()
+    }
+
+    @IBAction func beginEditReminder(sender: UITextField) {
+        UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseOut, animations: {
+            self.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 1), atScrollPosition: .Bottom, animated: false)
+            self.view.frame.origin.y = -171
+        }, completion: nil)
+    }
+    
+    
     func putData() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.onNewsUpdated(_:)), name: API.Notifications.newsUpdated, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.onNewsUpdated(_:)), name: API.Notifications.newsUpdated, object: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.onTweetsUpdated(_:)), name: API.Notifications.tweetsUpdated, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.onTweetsUpdated(_:)), name: API.Notifications.tweetsUpdated, object: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.onPlacesUpdated(_:)), name: API.Notifications.placesUpdated, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.onPlacesUpdated(_:)), name: API.Notifications.placesUpdated, object: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.onWeatherUpdated(_:)), name: API.Notifications.weatherUpdated, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.onWeatherUpdated(_:)), name: API.Notifications.weatherUpdated, object: nil)
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.updateTable(_:)), name: API.Notifications.updateTable, object: nil)
+
         Data.sharedInstance.getDataFromTweets()
         Data.sharedInstance.getDataFromNews()
     }
@@ -407,14 +487,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         switch table {
         case .Reminders:
             typeOfInfo = .Reminders
+            self.title = "Recordatorios"
             self.tableView.reloadData()
             hideMap()
         case .News:
             typeOfInfo = .News
+            self.title = "Noticias"
             self.tableView.reloadData()
             hideMap()
         case .Places:
             typeOfInfo = .Places
+            self.title = "Lugares"
             self.tableView.reloadData()
             getMap()
             getLocation()
@@ -438,7 +521,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if height == 568.0 {
             self.viewHeight = 310
         }
-        
     }
     
     func getMap() {
@@ -483,6 +565,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         map.addAnnotations(FoodAnnotations.annotations)
     }
     
+    func updateTable(notification: NSNotification) {
+        dispatch_async(dispatch_get_main_queue()) {
+            [unowned self] in
+            self.tableView.reloadSections(NSIndexSet(index: 1) , withRowAnimation: .Fade)
+        }
+    }
+    
     func onWeatherUpdated(notification: NSNotification) {
         if typeOfInfo == .Reminders {
             dispatch_async(dispatch_get_main_queue()) {
@@ -492,8 +581,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    @IBAction func unwindForSegue(unwindSegue: UIStoryboardSegue) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "reminderSegue" {
+            let view = segue.destinationViewController.childViewControllers.first as! ReminderViewController
+            view.reminder = reminders[rowPath!]
+        }
+    }
     
+    @IBAction func unwindForSegue(unwindSegue: UIStoryboardSegue) {
     }
 }
 

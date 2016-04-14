@@ -3,3 +3,4 @@ platform :ios, '9.0'
 use_frameworks!
 
 pod 'QuadratTouch', '>= 1.0'
+pod 'RealmSwift'

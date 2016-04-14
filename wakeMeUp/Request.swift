@@ -15,8 +15,8 @@ typealias DataResponse = ([[String : AnyObject]]) -> Void
 
 struct Request {
     var session: Session?
-    
     static let sharedInstance = Request()
+    
     private let keyMostPopular = "df44537e748f15225473138a13a01619:14:74524472"
     private let weatherKey = "5ad09f42d5b07b43301d02ac54ef499f"
     
@@ -26,7 +26,6 @@ struct Request {
         Session.setupSharedSessionWithConfiguration(configuration)
         self.session = Session.sharedSession()
     }
-    
     
     //openweather api
     func getWeather(lat: CLLocationDegrees, lon: CLLocationDegrees, onCompletion: JSONResponse) {
@@ -64,7 +63,6 @@ struct Request {
             onCompletion(venues)
         }
     }
-    
     
     private func makeHTTPRequest(url: String, onCompletion: JSONResponse) {
         let request = NSMutableURLRequest(URL: NSURL(string: url)!)

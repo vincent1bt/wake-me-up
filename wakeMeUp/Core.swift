@@ -10,6 +10,7 @@ import Foundation
 import TwitterKit
 import MapKit
 import QuadratTouch
+import RealmSwift
 
 enum TypeOfTable: Int {
     case Reminders = 0
@@ -23,11 +24,37 @@ struct API {
         static let tweetsUpdated = "tweetsUpdated"
         static let placesUpdated = "placesUpdated"
         static let weatherUpdated = "weatherUpdated"
+        static let updateTable = "updateTable"
     }
 }
 
 struct Data {
     static let sharedInstance = Data()
+    let realm = try! Realm()
+    
+    func saveReminder(title: String) {
+        let reminder = Reminder()
+        reminder.title = title
+        reminder.editing = true
+        
+        try! realm.write({
+            realm.add(reminder)
+        })
+    }
+    
+    func updateReminder() {
+        
+    }
+    
+    func deleteReminder(reminderToDelete: Reminder) {
+        try! realm.write({ 
+            realm.delete(reminderToDelete)
+        })
+    }
+    
+    func dateToString(date: NSDate) -> String {
+       return NSDateFormatter.localizedStringFromDate(date, dateStyle: .MediumStyle, timeStyle: .ShortStyle)
+    }
     
     func getDataFromNews() {
         Request.sharedInstance.getNews() { (json, error) in

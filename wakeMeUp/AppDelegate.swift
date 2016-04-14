@@ -9,14 +9,12 @@
 import UIKit
 import Fabric
 import TwitterKit
-
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
-
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         Twitter.sharedInstance().startWithConsumerKey(Keys.Twitter.consumerKey, consumerSecret: Keys.Twitter.secretKey)

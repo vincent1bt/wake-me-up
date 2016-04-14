@@ -21,6 +21,7 @@
 		BFB8EA511CBB43F700986320 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8EA501CBB43F700986320 /* Weather.swift */; };
 		BFBCBA9E1CB83B0100DA1C01 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBCBA9D1CB83B0100DA1C01 /* Keys.swift */; };
 		BFC48A471CBC23D70001079D /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC48A461CBC23D70001079D /* NewsTableViewCell.swift */; };
+		BFC48A491CBCA1B30001079D /* RemindersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC48A481CBCA1B20001079D /* RemindersTableViewCell.swift */; };
 		BFC49B551CAC8B4D00103571 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC49B541CAC8B4D00103571 /* ConfigurationViewController.swift */; };
 		BFD74CEB1CA9D92400CDAEA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD74CEA1CA9D92400CDAEA9 /* AppDelegate.swift */; };
 		BFD74CED1CA9D92400CDAEA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD74CEC1CA9D92400CDAEA9 /* ViewController.swift */; };
@@ -29,6 +30,8 @@
 		BFD74CF51CA9D92400CDAEA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD74CF31CA9D92400CDAEA9 /* LaunchScreen.storyboard */; };
 		BFD74D001CA9D92400CDAEA9 /* wakeMeUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD74CFF1CA9D92400CDAEA9 /* wakeMeUpTests.swift */; };
 		BFD74D0B1CA9D92400CDAEA9 /* wakeMeUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD74D0A1CA9D92400CDAEA9 /* wakeMeUpUITests.swift */; };
+		BFED07E31CBDE09000998939 /* Reminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFED07E21CBDE09000998939 /* Reminders.swift */; };
+		BFED07E51CBDEB4200998939 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFED07E41CBDEB4200998939 /* ReminderViewController.swift */; };
 		BFFF45EB1CADA04C00BE5FE8 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = BFFF45EA1CADA04C00BE5FE8 /* .gitignore */; };
 		BFFF45EF1CADA34700BE5FE8 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BFFF45EE1CADA34700BE5FE8 /* Podfile */; };
 		CF0BC6C537B1C6FF2CA7CA73 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BDB810487EBBA516ABC6C6 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -67,6 +70,7 @@
 		BFB8EA501CBB43F700986320 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		BFBCBA9D1CB83B0100DA1C01 /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		BFC48A461CBC23D70001079D /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		BFC48A481CBCA1B20001079D /* RemindersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemindersTableViewCell.swift; sourceTree = "<group>"; };
 		BFC49B541CAC8B4D00103571 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		BFD74CE71CA9D92300CDAEA9 /* wakeMeUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wakeMeUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD74CEA1CA9D92400CDAEA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 		BFD74D061CA9D92400CDAEA9 /* wakeMeUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wakeMeUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD74D0A1CA9D92400CDAEA9 /* wakeMeUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wakeMeUpUITests.swift; sourceTree = "<group>"; };
 		BFD74D0C1CA9D92400CDAEA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFED07E21CBDE09000998939 /* Reminders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reminders.swift; sourceTree = "<group>"; };
+		BFED07E41CBDEB4200998939 /* ReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
 		BFFF45EA1CADA04C00BE5FE8 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		BFFF45EE1CADA34700BE5FE8 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		D2B04F20CEBA8F3C79E88C51 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -149,6 +155,7 @@
 				BFA812FE1CADB7FD00B91B03 /* Places.swift */,
 				BFA813001CADC4F600B91B03 /* FoodAnnotation.swift */,
 				BFB8EA501CBB43F700986320 /* Weather.swift */,
+				BFED07E21CBDE09000998939 /* Reminders.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -158,6 +165,7 @@
 			children = (
 				BFB8EA4E1CBAFBD800986320 /* WeatherTableViewCell.swift */,
 				BFC48A461CBC23D70001079D /* NewsTableViewCell.swift */,
+				BFC48A481CBCA1B20001079D /* RemindersTableViewCell.swift */,
 			);
 			name = CustomFiles;
 			sourceTree = "<group>";
@@ -167,6 +175,7 @@
 			children = (
 				BFD74CEC1CA9D92400CDAEA9 /* ViewController.swift */,
 				BFC49B541CAC8B4D00103571 /* ConfigurationViewController.swift */,
+				BFED07E41CBDEB4200998939 /* ReminderViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -446,6 +455,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFED07E31CBDE09000998939 /* Reminders.swift in Sources */,
 				BF121B291CAB0137007FE7F0 /* News.swift in Sources */,
 				BFA813011CADC4F600B91B03 /* FoodAnnotation.swift in Sources */,
 				BFB8EA4F1CBAFBD800986320 /* WeatherTableViewCell.swift in Sources */,
@@ -453,9 +463,11 @@
 				BFC48A471CBC23D70001079D /* NewsTableViewCell.swift in Sources */,
 				BFB8EA511CBB43F700986320 /* Weather.swift in Sources */,
 				BF121B221CAAFAE9007FE7F0 /* Request.swift in Sources */,
+				BFC48A491CBCA1B30001079D /* RemindersTableViewCell.swift in Sources */,
 				BFD74CEB1CA9D92400CDAEA9 /* AppDelegate.swift in Sources */,
 				BFC49B551CAC8B4D00103571 /* ConfigurationViewController.swift in Sources */,
 				BF121B261CAB008B007FE7F0 /* Core.swift in Sources */,
+				BFED07E51CBDEB4200998939 /* ReminderViewController.swift in Sources */,
 				BF121B241CAAFC97007FE7F0 /* SwiftyJSON.swift in Sources */,
 				BFA812FF1CADB7FD00B91B03 /* Places.swift in Sources */,
 				BFBCBA9E1CB83B0100DA1C01 /* Keys.swift in Sources */,
