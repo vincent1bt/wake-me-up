@@ -76,7 +76,6 @@ struct Data {
                 if let imagesArray = ((new["media"].arrayValue).first)?["media-metadata"].arrayValue {
                     if imagesArray.count > 7 {
                         let imageUrl = imagesArray[7]["url"].string
-                        print(imageUrl)
                         if let url =  NSURL(string: imageUrl!) {
                             if let data = NSData(contentsOfURL: url) {
                                 let image = UIImage(data: data)
