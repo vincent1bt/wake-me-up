@@ -36,14 +36,21 @@ struct Data {
         let reminder = Reminder()
         reminder.title = title
         reminder.editing = true
-        
         try! realm.write({
             realm.add(reminder)
         })
     }
     
-    func updateReminder() {
-        
+    func updateReminder(reminder: Reminder, text: String) {
+        try! realm.write({ 
+            reminder.title = text
+        })
+    }
+    
+    func completeReminder(reminder: Reminder) {
+        try! realm.write({
+            reminder.end = true
+        })
     }
     
     func deleteReminder(reminderToDelete: Reminder) {
@@ -67,11 +74,14 @@ struct Data {
                 newItem.content =  new["abstract"].stringValue
                 
                 if let imagesArray = ((new["media"].arrayValue).first)?["media-metadata"].arrayValue {
-                    let imageUrl = imagesArray[7]["url"].stringValue
-                    if let url =  NSURL(string: imageUrl) {
-                        if let data = NSData(contentsOfURL: url) {
-                            let image = UIImage(data: data)
-                            newItem.image = image
+                    if imagesArray.count > 7 {
+                        let imageUrl = imagesArray[7]["url"].string
+                        print(imageUrl)
+                        if let url =  NSURL(string: imageUrl!) {
+                            if let data = NSData(contentsOfURL: url) {
+                                let image = UIImage(data: data)
+                                newItem.image = image
+                            }
                         }
                     }
                 }

@@ -59,11 +59,7 @@ class ReminderViewController: UIViewController {
         deleteBtn.hidden = false
     }
     
-    @IBAction func makeNotification(sender: UIBarButtonItem) {
-        if self.date == nil && self.reminderTitle == nil {
-            self.performSegueWithIdentifier("backToReminders", sender: self)
-            return
-        }
+    func updateDate() {
         Data.sharedInstance.realm.beginWrite()
         let updateReminder = self.reminder!
         
@@ -73,6 +69,7 @@ class ReminderViewController: UIViewController {
         
         if self.date != nil {
             if reminder!.date == nil || self.date! != reminder!.date {
+                createNotification()
                 updateReminder.date = self.date
                 updateReminder.stringDate = Data.sharedInstance.dateToString(self.date!)
             }
@@ -86,6 +83,18 @@ class ReminderViewController: UIViewController {
             print("Error \(e)")
         }
         NSNotificationCenter.defaultCenter().postNotificationName(API.Notifications.updateTable, object: nil)
+    }
+    
+    func createNotification() {
+        
+    }
+    
+    @IBAction func makeNotification(sender: UIBarButtonItem) {
+        if self.date == nil && self.reminderTitle == nil {
+            self.performSegueWithIdentifier("backToReminders", sender: self)
+            return
+        }
+        updateDate()
         self.performSegueWithIdentifier("backToReminders", sender: self)
     }
 }

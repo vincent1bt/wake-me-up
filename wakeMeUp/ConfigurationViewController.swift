@@ -14,12 +14,13 @@ class ConfigurationViewController: UIViewController, UITableViewDelegate, UITabl
     var session: String?
     
     @IBOutlet weak var tableView: UITableView!
-    let config = ["Inicia sesion con Twitter", "Inicia sesion con Facebook"]
-    let alreadyConfig = ["Sesion de Twitter iniciada"]
+    let config = ["Inicia sesión con Twitter", "Inicia sesion con Facebook"]
+    let alreadyConfig = ["Sesión de Twitter iniciada"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         session = Twitter.sharedInstance().sessionStore.session()?.userID
+        self.tableView.tableFooterView = UIView(frame: CGRectZero)
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,7 +28,7 @@ class ConfigurationViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -40,7 +41,7 @@ class ConfigurationViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
-            return "Para poder ver tu timeline se necesita iniciar sesion con twitter"
+            return "Inicia sesión para ver tu timeline"
         } else {
             return "Facebook"
         }
@@ -55,8 +56,6 @@ class ConfigurationViewController: UIViewController, UITableViewDelegate, UITabl
             } else {
               cell.textLabel?.text = config[0]
             }
-        } else if indexPath.section == 1 {
-            cell.textLabel?.text = config[1]
         }
         return cell
     }

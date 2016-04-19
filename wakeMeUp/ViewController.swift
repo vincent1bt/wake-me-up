@@ -79,7 +79,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cancelBtn.alpha = 0.7
         cancelBtn.addTarget(self, action: #selector(self.cancelRoute), forControlEvents: .TouchUpInside)
         
-        let positionBtn = createButton("Ubicacion", tag: 5)
+        let positionBtn = createButton("Ubicación", tag: 5)
         positionBtn.addTarget(self, action: #selector(self.putUserLocation), forControlEvents: .TouchUpInside)
         
         let bigMapBtn = createButton("Expandir", tag: 6)
@@ -170,7 +170,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         directions.calculateDirectionsWithCompletionHandler { (response, error) in
             if error != nil {
-                print("error in the ubication")
+                print("error, ubication")
             } else {
                 self.showRoute(response!)
                 let cancelBtn = self.configMapView.viewWithTag(4) as! UIButton
@@ -249,6 +249,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func configureTableView() {
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.tableFooterView = UIView(frame: CGRectZero)
         self.tableView.registerClass(TWTRTweetTableViewCell.self, forCellReuseIdentifier: "tweetsCell")
     }
     
@@ -368,20 +369,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     cell.textField.text = ""
                     cell.dateLabel.text = ""
                 } else {
-                    cell.textField.text = reminders[indexPath.row].title
-                    if let date = reminders[indexPath.row].stringDate {
+                    let reminder = reminders[indexPath.row]
+                    cell.textField.text = reminder.title
+                    if let date = reminder.stringDate {
                         cell.dateLabel.text = date
                     } else {
                         cell.dateLabel.text = ""
                     }
+                    
+                    if reminder.end {
+                        cell.textField.textColor = UIColor.init(red: 39/255, green: 174/255, blue: 96/255, alpha: 1.0)
+                    } else {
+                        cell.textField.textColor = UIColor.blackColor()
+                    }
+                    
+                    if indexPath.row == reminders.count {
+                        cell.textField.textColor = UIColor.blackColor()
+                    }
+                    
                     cell.accessoryType = .DetailButton
                 }
-                
-//                if indexPath.row > 0 {
-//
-//                } else if indexPath.row == 0 {
-//
-//                }
                 return cell
             }
         case .News:
@@ -417,7 +424,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if sender.text != nil && sender.text != "" {
             if sender.tag != reminders.count {
                 if reminders[sender.tag].editing {
-                    print("editando")
+                    self.updateReminder(sender.text!, id: sender.tag)
                     self.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 1), atScrollPosition: .Bottom, animated: false)
                 }
             } else {
@@ -436,8 +443,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.tableView.reloadSections(NSIndexSet(index: 1), withRowAnimation: .Fade)
     }
     
-    func updateReminder() {
-        Data.sharedInstance.updateReminder()
+    func updateReminder(text: String, id: Int) {
+        let reminder = reminders[id]
+        Data.sharedInstance.updateReminder(reminder, text: text)
     }
     
     func reminderDeleted(id: Int) {
@@ -449,6 +457,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.tableView.reloadSections(NSIndexSet(index: 1), withRowAnimation: .Fade)
         self.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: id + 1, inSection: 1), atScrollPosition: .Bottom, animated: false)
         self.tableView.endUpdates()
+    }
+    
+    func completeReminder(id: Int) {
+        let reminder = reminders[id]
+        Data.sharedInstance.completeReminder(reminder)
+        self.tableView.reloadSections(NSIndexSet(index: 1), withRowAnimation: .Fade)
     }
 
     @IBAction func beginEditReminder(sender: UITextField) {
@@ -487,18 +501,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         switch table {
         case .Reminders:
             typeOfInfo = .Reminders
-            self.title = "Recordatorios"
             self.tableView.reloadData()
+            self.title = "Recordatorios"
             hideMap()
         case .News:
             typeOfInfo = .News
-            self.title = "Noticias"
             self.tableView.reloadData()
+            self.title = "Noticias"
             hideMap()
         case .Places:
             typeOfInfo = .Places
-            self.title = "Lugares"
             self.tableView.reloadData()
+            self.title = "Lugares"
             getMap()
             getLocation()
         }
