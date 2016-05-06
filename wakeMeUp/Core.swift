@@ -92,7 +92,7 @@ struct Data {
     }
     
     func getDataFromTweets() {
-        Request.sharedInstance.getTweets() { (json, error) in
+        Request.sharedInstance.makeTwitterRequest() { (json, error) -> Void in
             News.tweets = TWTRTweet.tweetsWithJSONArray((json.object as! [AnyObject])) as! [TWTRTweet]
             NSNotificationCenter.defaultCenter().postNotificationName(API.Notifications.tweetsUpdated, object: nil)
         }
@@ -144,7 +144,6 @@ struct Data {
     func getDataFromPlaces(location: CLLocation) {
         Request.sharedInstance.getPlaces(location) {
             (venues) in
-            autoreleasepool() {
                 for venue: [String: AnyObject] in venues {
                     var newPlace = Place()
                     
@@ -173,7 +172,6 @@ struct Data {
                     let annotation = FoodAnnotation(title: newPlace.name, subtitle: newPlace.adress, coordinate: newPlace.coordinate)
                     FoodAnnotations.annotations.append(annotation)
                 }
-            }
             NSNotificationCenter.defaultCenter().postNotificationName(API.Notifications.placesUpdated, object: nil)
         }
     }

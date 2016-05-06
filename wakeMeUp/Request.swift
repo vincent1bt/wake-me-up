@@ -44,14 +44,6 @@ struct Request {
         }
     }
     
-    //twitter api
-    func getTweets(onCompletion: JSONResponse) {
-        makeTwitterRequest() {
-            (json, error) in
-            onCompletion(json, nil)
-        }
-    }
-    
     //forsquare api
     func getPlaces(location: CLLocation, onCompletion: DataResponse) {
         var parameters = location.parameters()
@@ -64,18 +56,8 @@ struct Request {
         }
     }
     
-    private func makeHTTPRequest(url: String, onCompletion: JSONResponse) {
-        let request = NSMutableURLRequest(URL: NSURL(string: url)!)
-        let session = NSURLSession.sharedSession()
-        
-        let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
-            let json: JSON = JSON(data: data!)
-            onCompletion(json, error)
-        }
-        task.resume()
-    }
-    
-    private func makeTwitterRequest(onCompletion: JSONResponse) {
+    //twitter api
+    func makeTwitterRequest(onCompletion: JSONResponse) {
         let userID = Twitter.sharedInstance().sessionStore.session()?.userID
         let client = TWTRAPIClient(userID: userID)
         let endPoint = "https://api.twitter.com/1.1/statuses/home_timeline.json"
@@ -90,13 +72,22 @@ struct Request {
         
         client.sendTwitterRequest(request) {
             (response, data, connectionError) -> Void in
-            
             if connectionError == nil {
                 let json: JSON = JSON(data: data!)
                 onCompletion(json, nil)
             }
         }
+    }
+    
+    private func makeHTTPRequest(url: String, onCompletion: JSONResponse) {
+        let request = NSMutableURLRequest(URL: NSURL(string: url)!)
+        let session = NSURLSession.sharedSession()
         
+        let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
+            let json: JSON = JSON(data: data!)
+            onCompletion(json, error)
+        }
+        task.resume()
     }
     
     private func makeFoursquareRequest(parameters: Parameters, onCompletion: DataResponse) {

@@ -15,6 +15,7 @@
 		BF121B301CAB5DE0007FE7F0 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF121B2C1CAB5DE0007FE7F0 /* TwitterKit.framework */; };
 		BF121B311CAB5DE0007FE7F0 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF121B2D1CAB5DE0007FE7F0 /* TwitterKitResources.bundle */; };
 		BF121B321CAB5DE0007FE7F0 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF121B2E1CAB5DE0007FE7F0 /* TwitterCore.framework */; };
+		BF8D57161CDBBEF800B4E2EE /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = BF8D57151CDBBEF800B4E2EE /* README.md */; };
 		BFA812FF1CADB7FD00B91B03 /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA812FE1CADB7FD00B91B03 /* Places.swift */; };
 		BFA813011CADC4F600B91B03 /* FoodAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA813001CADC4F600B91B03 /* FoodAnnotation.swift */; };
 		BFB8EA4F1CBAFBD800986320 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8EA4E1CBAFBD800986320 /* WeatherTableViewCell.swift */; };
@@ -64,6 +65,7 @@
 		BF121B2C1CAB5DE0007FE7F0 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		BF121B2D1CAB5DE0007FE7F0 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		BF121B2E1CAB5DE0007FE7F0 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
+		BF8D57151CDBBEF800B4E2EE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BFA812FE1CADB7FD00B91B03 /* Places.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
 		BFA813001CADC4F600B91B03 /* FoodAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodAnnotation.swift; sourceTree = "<group>"; };
 		BFB8EA4E1CBAFBD800986320 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 		BFD74CDE1CA9D92300CDAEA9 = {
 			isa = PBXGroup;
 			children = (
+				BF8D57151CDBBEF800B4E2EE /* README.md */,
 				BFFF45EE1CADA34700BE5FE8 /* Podfile */,
 				BFFF45EA1CADA04C00BE5FE8 /* .gitignore */,
 				BF121B2B1CAB5DE0007FE7F0 /* Fabric.framework */,
@@ -466,6 +469,7 @@
 				BFC48A491CBCA1B30001079D /* RemindersTableViewCell.swift in Sources */,
 				BFD74CEB1CA9D92400CDAEA9 /* AppDelegate.swift in Sources */,
 				BFC49B551CAC8B4D00103571 /* ConfigurationViewController.swift in Sources */,
+				BF8D57161CDBBEF800B4E2EE /* README.md in Sources */,
 				BF121B261CAB008B007FE7F0 /* Core.swift in Sources */,
 				BFED07E51CBDEB4200998939 /* ReminderViewController.swift in Sources */,
 				BF121B241CAAFC97007FE7F0 /* SwiftyJSON.swift in Sources */,
